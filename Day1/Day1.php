@@ -24,15 +24,12 @@ class Day1
 
     public function part1(): int|string
     {
-        $sum = 0;
-        foreach ($this->f as $value) {
-            $nums = array_map('intval', str_split($value));
-            $nums = array_values(array_filter($nums, function ($a) {
+        return array_sum(array_map(function ($f){
+            $n = array_filter(array_map('intval', str_split($f)), function ($a) {
                 return ($a !== 0);
-            }));
-            $sum += ($nums[array_key_first($nums)] . $nums[count($nums) - 1]);
-        }
-        return $sum;
+            });
+            return (reset($n) . end($n));
+        },$this->f));
     }
 
     public function part2(): int|string
