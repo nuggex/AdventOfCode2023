@@ -27,3 +27,9 @@ phpbench run .\DayXBench.php --report=default --revs 10000
 | 0    | Day1Bench | benchPart2 |     | 10000 | 543,968b | 1,734.925μs | +0.00σ       | +0.00%         |
 
 
+# Day2
+
+| iter | benchmark | subject    | set | revs  | mem_peak | time_avg  | comp_z_value | comp_deviation |
+|------|-----------|------------|-----|-------|----------|-----------|--------------|----------------|
+| 0    | Day2Bench | benchPart1 |     | 10000 | 705,024b | 633.231μs | +0.00σ       | +0.00%         |
+| 0    | Day2Bench | benchPart2 |     | 10000 | 706,200b | 664.682μs | +0.00σ       | +0.00%         |
