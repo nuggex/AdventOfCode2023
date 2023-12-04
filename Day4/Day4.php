@@ -24,14 +24,14 @@ class Day4
 
     public function part2(): float|object|int
     {
-        $test = array_map(function ($f){
+        $test = array_map(function ($f) {
             return array($f);
-        },$this->f);
+        }, $this->f);
         foreach ($test as $k => &$r) {
-            foreach($r as $row) {
-                $split = explode("|", explode(":", $row)[1]);
-                $result = array_values(array_filter(array_intersect(explode(" ", $split[0]), explode(" ", $split[1]))));
-                if ($count = count($result)) {
+            $split = explode("|", explode(":", $r[0])[1]);
+            $result = array_values(array_filter(array_intersect(explode(" ", $split[0]), explode(" ", $split[1]))));
+            if ($count = count($result)) {
+                foreach ($r as $row) {
                     for ($i = 1; $i <= $count; $i++) {
                         $test[$i + $k][] = $test[$i + $k][0];
                     }
